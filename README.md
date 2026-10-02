@@ -1,30 +1,53 @@
 # Card Stack
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+An interactive card-stack UI built with Next.js — cards fan out in a stack and cycle on click, with smooth spring animations and dark/light theming.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/gileb64375-5584s-projects/v0-card-stack)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/OEdsaKHtNAk)
+## Features
 
-## Overview
+- **Interactive card stack** — click the top card to send it to the back with a spring animation
+- **Framer-motion physics** — spring-based drag and stack transitions
+- **Dark/light theme toggle** — theme provider with class-based theming
+- **Responsive layout** — centered card stage that scales from mobile to desktop
+- **Client-side only** — no backend, no env vars, no API routes
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Tech Stack
 
-## Deployment
+- Next.js 15 + TypeScript
+- Tailwind CSS + shadcn-style components
+- Framer Motion for animations
+- Lucide icons
 
-Your project is live at:
+## Quick Start
 
-**[https://vercel.com/gileb64375-5584s-projects/v0-card-stack](https://vercel.com/gileb64375-5584s-projects/v0-card-stack)**
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static export to out/
+```
 
-## Build your app
+The app is a static export (`output: "export"` in `next.config.mjs`), so it can be hosted on any static host: Cloudflare Pages, GitHub Pages, Netlify, Vercel.
 
-Continue building your app on:
+## Project Structure
 
-**[https://v0.app/chat/projects/OEdsaKHtNAk](https://v0.app/chat/projects/OEdsaKHtNAk)**
+```
+card-stack/
+├── app/
+│   ├── page.tsx          # Home page — renders <CardStack />
+│   ├── layout.tsx        # Root layout + theme provider
+│   └── globals.css       # Tailwind + theme tokens
+├── components/
+│   ├── card-stack.tsx    # The interactive stack component
+│   └── theme-provider.tsx
+└── public/               # Placeholder images/logos
+```
 
-## How It Works
+## Deploy
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+npm run build
+# serve out/ on any static host
+```
+
+---
+
+**Built by Girish Lade** — [ladestack.in](https://ladestack.in)
